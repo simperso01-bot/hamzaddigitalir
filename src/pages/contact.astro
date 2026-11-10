@@ -25,23 +25,24 @@ const { title, social_links, meta_title, description } = contact.data;
           height={800}
           class="-z-[1] object-cover object-top absolute inset-0"
           src={"/images/map.png"}
-          alt="map bg"
+          alt=""
+          aria-hidden="true"
           format="webp"
         />
         <div class="lg:col-6">
           <h1
-            class="my-10 lg:my-11 lg:pt-11 text-center lg:text-left lg:text-[64px]"
+            class="my-10 lg:my-11 lg:pt-11 text-center lg:text-start lg:text-[64px]"
             set:html={markdownify(title || "")}
           />
         </div>
         <div
           class="contact-form-wrapper rounded border border-border p-6 dark:border-darkmode-border lg:col-6">
           <h2>
-            Send Us A
+            برای ما
             <span
-              class="ml-1.5 inline-flex items-center text-primary dark:text-darkmode-primary">
-              Message
-              <DynamicIcon icon="FaArrowRight" />
+              class="ms-1.5 inline-flex items-center text-primary dark:text-darkmode-primary">
+              پیام بفرستید
+              <DynamicIcon icon="FaArrowLeft" className="ms-1" />
             </span>
           </h2>
           <form
@@ -50,7 +51,7 @@ const { title, social_links, meta_title, description } = contact.data;
             action={contact_form_action}>
             <div class="mb-6">
               <label class="mb-2 block font-secondary" for="name">
-                Full name
+                نام و نام خانوادگی
                 <small
                   class="font-secondary text-sm text-primary dark:text-darkmode-primary">
                   *</small
@@ -58,15 +59,16 @@ const { title, social_links, meta_title, description } = contact.data;
               </label>
               <input
                 class="form-input w-full"
+                id="name"
                 name="name"
                 type="text"
-                placeholder="Thomas Milano"
+                placeholder="نام شما"
                 required
               />
             </div>
             <div class="mb-6">
               <label class="mb-2 block font-secondary" for="email">
-                Email Address
+                ایمیل
                 <small
                   class="font-secondary text-sm text-primary dark:text-darkmode-primary">
                   *</small
@@ -74,15 +76,18 @@ const { title, social_links, meta_title, description } = contact.data;
               </label>
               <input
                 class="form-input w-full"
+                id="email"
                 name="email"
                 type="email"
-                placeholder="example@gmail.com"
+                dir="ltr"
+                inputmode="email"
+                placeholder="name@example.com"
                 required
               />
             </div>
             <div class="mb-6">
               <label class="mb-2 block font-secondary" for="subject">
-                Subject
+                موضوع
                 <small
                   class="font-secondary text-sm text-primary dark:text-darkmode-primary">
                   *</small
@@ -90,15 +95,16 @@ const { title, social_links, meta_title, description } = contact.data;
               </label>
               <input
                 class="form-input w-full"
+                id="subject"
                 name="subject"
                 type="text"
-                placeholder="Blog advertisement"
+                placeholder="موضوع پیام"
                 required
               />
             </div>
             <div class="mb-6">
               <label class="mb-2 block font-secondary" for="message">
-                Your Message Here
+                پیام
                 <small
                   class="font-secondary text-sm text-primary dark:text-darkmode-primary">
                   *</small
@@ -106,10 +112,12 @@ const { title, social_links, meta_title, description } = contact.data;
               </label>
               <textarea
                 class="form-textarea w-full"
-                placeholder="Hello I’m Mr ‘x’ from………….."
+                id="message"
+                name="message"
+                placeholder="پیام خود را بنویسید…"
                 rows="7"></textarea>
             </div>
-            <input class="btn btn-primary" type="submit" value="Send Now" />
+            <input class="btn btn-primary" type="submit" value="ارسال" />
           </form>
         </div>
       </div>
@@ -124,7 +132,7 @@ const { title, social_links, meta_title, description } = contact.data;
                 <a
                   href={link.link}
                   target="_blank"
-                  class="after:absolute after:inset-0 ml-1.5 text-lg font-bold text-text-dark dark:text-darkmode-text-light">
+                  class="after:absolute after:inset-0 ms-1.5 text-lg font-bold text-text-dark dark:text-darkmode-text-light">
                   {link.content}
                 </a>
               </span>

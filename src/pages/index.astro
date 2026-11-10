@@ -27,15 +27,15 @@ const featuredPosts = posts.filter((post) => post.data.featured);
 ---
 
 <Base>
-  {/* Banner */}
   <section class="section banner relative pb-0">
     <Image
-      class="absolute bottom-0 left-0 z-[-1] w-full"
+      class="absolute bottom-0 start-0 z-[-1] w-full"
       src={"/images/banner-bg-shape.png"}
       width={1905}
       height={351}
       style={{ objectFit: "contain" }}
-      alt="banner-shape"
+      alt=""
+      aria-hidden="true"
       loading={"eager"}
     />
 
@@ -44,8 +44,8 @@ const featuredPosts = posts.filter((post) => post.data.featured);
         class="row flex-wrap-reverse items-center justify-center lg:flex-row">
         <div
           class={banner.image_enable
-            ? "mt-12 text-center lg:mt-0 lg:text-left lg:col-6"
-            : "mt-12 text-center lg:mt-0 lg:text-left lg:col-12"}>
+            ? "mt-12 text-center lg:mt-0 lg:text-start lg:col-6"
+            : "mt-12 text-center lg:mt-0 lg:text-start lg:col-12"}>
           <div class="banner-title">
             <h1 set:html={markdownify(banner.title)}></h1>
             <span set:html={markdownify(banner.title_small)}></span>
@@ -68,7 +68,8 @@ const featuredPosts = posts.filter((post) => post.data.featured);
                 width={548}
                 height={443}
                 format="webp"
-                alt="Banner"
+                alt=""
+                aria-hidden="true"
                 loading="eager"
               />
             </div>
@@ -78,12 +79,10 @@ const featuredPosts = posts.filter((post) => post.data.featured);
     </div>
   </section>
 
-  {/* Home main */}
   <section class="section">
     <div class="container">
       <div class="row items-start">
         <div class="mb-12 lg:mb-0 lg:col-8">
-          {/* Featured posts */}
           {
             featured_posts.enable && (
               <div class="section">
@@ -104,12 +103,11 @@ const featuredPosts = posts.filter((post) => post.data.featured);
                           return (
                             <div
                               class={`mb-6 flex flex-col sm:flex-row sm:items-center pb-6 last:max-md:pb-0 last:mb-0`}>
-                              {/* Post Image */}
                               {image && (
                                 <Image
-                                  class="sm:mr-3 max-sm:mb-2 max-sm:w-full sm:h-[85px] rounded object-cover"
+                                  class="sm:me-3 max-sm:mb-2 max-sm:w-full sm:h-[85px] rounded object-cover"
                                   src={image}
-                                  alt={title || "Post Image"}
+                                  alt={title || ""}
                                   width={105}
                                   height={85}
                                   format="webp"
@@ -126,7 +124,7 @@ const featuredPosts = posts.filter((post) => post.data.featured);
                                 </h3>
                                 <p class="inline-flex items-center font-bold">
                                   <DynamicIcon
-                                    className="mr-1.5"
+                                    className="me-1.5"
                                     icon="FaRegCalendar"
                                   />
                                   {dateFormat(date!)}
@@ -142,23 +140,21 @@ const featuredPosts = posts.filter((post) => post.data.featured);
             )
           }
 
-          {/* Promotion */}
           {
             promotion.enable && (
-              <a href={promotion.link} class="section block pt-0">
+              <a href={promotion.link} class="section block pt-0" aria-label="تبلیغات">
                 <Image
                   class="h-full w-full"
                   height={115}
                   width={800}
                   src={promotion.image}
-                  alt="promotion"
+                  alt=""
                   format="webp"
                 />
               </a>
             )
           }
 
-          {/* Recent Posts */}
           {
             recent_posts.enable && (
               <div class="section pt-0">

@@ -28,42 +28,42 @@
 
   "params": {
     "contact_form_action": "#",
-    "footer_content": "Lorem ipsum dolor sit amt, conse adip iscing. donec iaculis tempasus laoreet. Libero ullam rgscper.",
-    "copyright": "Designed and Developed By [Statichunt](https://statichunt.com/)"
+    "footer_content": "وبلاگی برای نشر نوشته‌ها، یادداشت‌ها و تجربه‌های روزمره با طراحی ساده و خوانا.",
+    "copyright": "طراحی و توسعه توسط [Statichunt](https://statichunt.com/)"
   },
 
   "widgets": {
     "about": {
       "enable": true,
-      "content": "Lorem ipsum dolor sit amet, conse tfctetur adipiscing elit. Vel in in donec iaculis tempasus odio nunc laoreet . Libero ullam rgscorper."
+      "content": "اینجا درباره نویسنده، موضوع‌های مورد علاقه و مسیر فعالیت وبلاگ نوشته می‌شود."
     },
     "featured_posts": {
       "enable": true,
-      "title": "Blog Categories",
+      "title": "نوشته‌های برگزیده",
       "showPost": 3
     },
     "categories": {
       "enable": true,
-      "title": "Blog Categories"
+      "title": "دسته‌بندی‌ها"
     },
     "newsletter": {
       "enable": true,
-      "title": "Newsletter",
-      "content": "Join thousands of Tiny Salt subscribers and get our best recipes delivered each week!",
+      "title": "خبرنامه",
+      "content": "برای دریافت تازه‌ترین نوشته‌ها، ایمیل خود را وارد کنید.",
       "privacy_policy_page": "/privacy-policy",
       "malichipm_url": ""
     }
   },
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "شروع کنید",
     "link": "https://example.com"
   },
 
   "metadata": {
     "meta_author": "statichunt",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "قالب وبلاگ فارسی با Astro و Tailwind"
   },
 
   "disqus": {

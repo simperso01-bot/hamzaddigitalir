@@ -1,19 +1,19 @@
 ---
 banner:
-  title: Welcome **!**
-  title_small: "to John Bravo's Blog"
-  content: Are Developer and recently started your own business Already made website to ensure presence wants to develop.
+  title: خوش آمدید **!**
+  title_small: "به وبلاگ فارسی"
+  content: اینجا می‌توانید نوشته‌ها، یادداشت‌ها و تجربه‌های تازه را بخوانید. محتوای نمونه را با متن خودتان جایگزین کنید.
   image_enable: true
   image: /images/banner-author.png
   button:
     enable: true
-    label: Know About Me
+    label: درباره من
     link: /about
     rel: ""
 
 featured_posts:
   enable: true
-  title: Featured Posts
+  title: نوشته‌های برگزیده
 
 promotion:
   enable: true
@@ -21,6 +21,6 @@ promotion:
   link: "/contact"
 
 recent_posts:
-  title: Recent Posts
+  title: تازه‌ترین نوشته‌ها
   enable: true
 ---

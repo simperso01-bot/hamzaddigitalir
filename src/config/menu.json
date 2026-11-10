@@ -1,33 +1,32 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "خانه",
       "url": "/"
     },
     {
-      "name": "Posts",
+      "name": "نوشته‌ها",
       "url": "/posts"
     },
     {
-      "name": "About",
+      "name": "درباره",
       "url": "/about"
     },
-
     {
-      "name": "Contact",
+      "name": "تماس",
       "url": "/contact"
     },
     {
-      "name": "Pages",
+      "name": "صفحه‌ها",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Elements",
+          "name": "المان‌ها",
           "url": "/elements"
         },
         {
-          "name": "Categories",
+          "name": "دسته‌بندی‌ها",
           "url": "/categories"
         }
       ]
@@ -35,19 +34,19 @@
   ],
   "footer": [
     {
-      "name": "Home",
+      "name": "خانه",
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "درباره",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "تماس",
       "url": "/contact"
     },
     {
-      "name": "Privacy Policy",
+      "name": "حریم خصوصی",
       "url": "/privacy-policy"
     }
   ]

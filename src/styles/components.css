@@ -43,7 +43,7 @@
   @apply flex w-full cursor-pointer items-center justify-between px-8 py-4 text-lg text-text-dark dark:bg-darkmode-body dark:text-darkmode-text-light;
 }
 .accordion-icon {
-  @apply ml-auto h-[.8em] w-[.8em] rotate-[-90deg] transition-transform duration-200;
+  @apply ms-auto h-[.8em] w-[.8em] rotate-[-90deg] transition-transform duration-200;
 }
 .accordion-content {
   @apply max-h-0 overflow-hidden px-8 py-0;
@@ -59,7 +59,7 @@
 
 /* social icon style */
 .social-icons {
-  @apply space-x-4;
+  @apply gap-4 flex flex-wrap;
   li {
     @apply inline-block;
     a {
@@ -97,7 +97,7 @@
     @apply relative list-none text-text-dark dark:text-darkmode-text-light;
   }
   ul li::before {
-    @apply absolute -ml-[15px] left-0 top-1/2 -translate-y-1/2 h-[9px] w-[9px] rounded-full border-2 bg-primary dark:bg-darkmode-primary content-[''];
+    @apply absolute -ms-[15px] start-0 top-1/2 -translate-y-1/2 h-[9px] w-[9px] rounded-full border-2 bg-primary dark:bg-darkmode-primary content-[''];
     box-shadow: 0px 0px 0px 2px var(--color-primary);
   }
   ul li {
@@ -115,11 +115,11 @@
         @apply absolute inline-block h-5 w-5 bg-[url('/images/quote.png')] bg-[length:20px_20px] bg-no-repeat;
       }
       &::before {
-        @apply -left-10 top-0 lg:-left-10;
+        @apply -start-10 top-0 lg:-start-10;
         content: "";
       }
       &::after {
-        @apply bottom-0 right-0 rotate-180;
+        @apply bottom-0 end-0 rotate-180;
         content: "";
       }
     }
@@ -150,7 +150,7 @@
 
 /* socials */
 .socials {
-  @apply flex items-center justify-center space-x-3 lg:justify-start lg:border-x lg:border-border 2xl:space-x-4;
+  @apply flex items-center justify-center gap-3 lg:justify-start lg:border-x lg:border-border 2xl:gap-4;
   li {
     @apply inline-flex;
   }
@@ -171,10 +171,10 @@ footer .socials {
 /* experience */
 .experience {
   li span {
-    @apply relative pl-5!;
+    @apply relative ps-5!;
   }
   li span::before {
-    @apply absolute left-0 top-1/2 -translate-y-1/2 h-[9px] w-[9px] rounded-full border-2 bg-primary dark:bg-darkmode-primary content-[''];
+    @apply absolute start-0 top-1/2 -translate-y-1/2 h-[9px] w-[9px] rounded-full border-2 bg-primary dark:bg-darkmode-primary content-[''];
     box-shadow: 0px 0px 0px 2px var(--color-primary);
   }
 
@@ -250,13 +250,13 @@ footer .socials {
       }
 
       &::before {
-        @apply left-0 top-0;
-        @apply -left-10 lg:-left-12;
+        @apply start-0 top-0;
+        @apply -start-10 lg:-start-12;
       }
 
       &::after {
-        @apply bottom-0 right-0 rotate-180;
-        @apply -right-10 lg:-right-8;
+        @apply bottom-0 end-0 rotate-180;
+        @apply -end-10 lg:-end-8;
       }
     }
   }

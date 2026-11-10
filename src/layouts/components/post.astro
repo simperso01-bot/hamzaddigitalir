@@ -29,13 +29,12 @@ const { body, id } = Astro.props;
       )
     }
 
-    <ul class="absolute top-3 left-2 flex flex-wrap items-center">
+    <ul class="absolute top-3 start-2 flex flex-wrap items-center gap-2">
       {
         categories?.map((tag) => (
-          <li class="m-2 inline-flex h-7 rounded-[35px] bg-primary px-3 text-white">
+          <li class="inline-flex h-7 rounded-[35px] bg-primary px-3 text-white">
             <a
-              aria-label="categories"
-              class="capitalize"
+              aria-label="دسته‌بندی"
               href={`/categories/${slugify(tag)}`}>
               {tag}
             </a>
@@ -51,9 +50,9 @@ const { body, id } = Astro.props;
       {title}
     </a>
   </h3>
-  <ul class="flex items-center space-x-4 mb-2">
+  <ul class="flex items-center gap-4 mb-2">
     <li class="inline-flex items-center font-secondary text-xs leading-3">
-      <DynamicIcon className="mr-1.5" icon="FaRegCalendar" />
+      <DynamicIcon className="me-1.5" icon="FaRegCalendar" />
       {dateFormat(date!)}
     </li>
   </ul>
@@ -64,6 +63,6 @@ const { body, id } = Astro.props;
     class="btn btn-outline-primary mt-4"
     href={`/${post_folder}/${id}`}>
     <span class="sr-only">{title}</span>
-    Read More
+    ادامه مطلب
   </a>
 </div>

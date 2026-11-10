@@ -1,5 +1,5 @@
 body.menu-open {
-  @apply overflow-hidden pr-0;
+  @apply overflow-hidden pe-0;
 }
 
 .header {
@@ -7,7 +7,7 @@ body.menu-open {
 }
 
 .backdrop {
-  @apply bg-black/20 opacity-0 invisible fixed top-0 left-0 h-full w-full lg:hidden z-20 transition;
+  @apply bg-black/20 opacity-0 invisible fixed top-0 start-0 h-full w-full lg:hidden z-20 transition;
 }
 
 /* navbar items */
@@ -24,25 +24,25 @@ body.menu-open {
   }
 }
 .navbar-nav {
-  @apply mt-0 order-3 p-7 lg:p-0 fixed top-0 right-0 h-screen bg-body lg:h-auto lg:bg-transparent lg:static max-w-md lg:max-w-none w-full pb-6 lg:order-0 lg:flex lg:items-center lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 transform translate-x-full lg:translate-x-0 z-50 transition-all duration-300 ease-in-out dark:max-lg:bg-darkmode-body;
+  @apply mt-0 order-3 p-7 lg:p-0 fixed top-0 end-0 h-screen bg-body lg:h-auto lg:bg-transparent lg:static max-w-md lg:max-w-none w-full pb-6 lg:order-0 lg:flex lg:items-center lg:w-auto lg:gap-2 lg:pb-0 xl:gap-8 transform -translate-x-full lg:translate-x-0 z-50 transition-all duration-300 ease-in-out dark:max-lg:bg-darkmode-body;
 }
 
 .nav-item {
-  @apply mb-5 text-left lg:mb-0;
+  @apply mb-5 text-start lg:mb-0;
 }
 .nav-item.active {
   @apply bg-primary text-white;
 }
 
 .nav-link {
-  @apply rounded-[30px] px-6 py-2.5 text-left font-secondary text-[13.5px] capitalize  text-text-dark transition hover:bg-primary hover:text-white dark:text-darkmode-text-light md:px-3 md:py-3 lg:text-center xl:px-5;
+  @apply rounded-[30px] px-6 py-2.5 text-start font-secondary text-[13.5px] text-text-dark transition hover:bg-primary hover:text-white dark:text-darkmode-text-light md:px-3 md:py-3 lg:text-center xl:px-5;
 }
 .nav-link.active {
   @apply bg-primary text-white;
 }
 
 .nav-dropdown {
-  @apply mr-0;
+  @apply me-0;
 }
 
 .nav-dropdown-list {
@@ -66,7 +66,7 @@ body.menu-open {
   @apply inline-block h-10 w-10 cursor-pointer rounded-full bg-primary p-2.5 text-xl text-white;
 }
 .search-modal {
-  @apply z-50 invisible opacity-100 absolute top-0 left-0 right-0  bg-body  transition dark:bg-black h-full;
+  @apply z-50 invisible opacity-100 absolute top-0 start-0 end-0 bg-body transition dark:bg-black h-full;
 }
 .search-modal {
   .form-input {
@@ -75,7 +75,7 @@ body.menu-open {
 }
 .search-modal {
   .search-close {
-    @apply absolute top-1/2 right-2 -translate-y-1/2 p-3 text-h4;
+    @apply absolute top-1/2 end-2 -translate-y-1/2 p-3 text-h4;
   }
 }
 .search-modal.open {
@@ -102,12 +102,12 @@ body.menu-open {
   }
 
   span {
-    @apply absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full bg-text-dark transition-all duration-300 dark:bg-white;
+    @apply absolute -top-1 start-0 flex h-6 w-6 items-center justify-center rounded-full bg-text-dark transition-all duration-300 dark:bg-white;
   }
 
   input:checked + label {
     span {
-      @apply lg:left-4;
+      @apply lg:start-4;
     }
   }
 }

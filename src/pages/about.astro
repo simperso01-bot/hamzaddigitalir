@@ -30,15 +30,15 @@ const { title, image, education, experience, description, meta_title } =
       }
 
       <h1
-        class="h1 text-left lg:text-[55px] mt-12"
+        class="h1 text-start lg:text-[55px] mt-12"
         set:html={markdownify(title || "")}
       ></h1>
 
-      <div class="content text-left">
+      <div class="content text-start">
         <Content />
       </div>
 
-      <div class="row mt-24 text-left lg:flex-nowrap">
+      <div class="row mt-24 text-start lg:flex-nowrap">
         <div class="lg:col-6">
           <div
             class="rounded border border-border p-6 dark:border-darkmode-border">

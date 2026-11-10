@@ -1,5 +1,5 @@
 import config from "@/config/config.json";
-import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
+import { plainify, slugify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
 import Fuse from "fuse.js";
 import React, { useEffect, useRef, useState } from "react";
@@ -71,10 +71,11 @@ const Search = ({ searchList }: Props) => {
           <div className="lg:col-8">
             <div className="flex flex-nowrap">
               <input
-                className="form-input border! border-r-0! p-4! rounded-l-lg bg-light! dark:bg-dark! w-full"
-                placeholder="Search posts"
+                className="form-input border! border-e-0! p-4! rounded-s-lg bg-light! dark:bg-dark! w-full"
+                placeholder="جست‌وجوی نوشته‌ها"
                 type="search"
                 name="search"
+                aria-label="جست‌وجو"
                 value={inputVal}
                 onChange={handleChange}
                 autoComplete="off"
@@ -82,8 +83,9 @@ const Search = ({ searchList }: Props) => {
                 ref={inputRef}
               />
               <button
-                className="btn btn-primary before:hidden rounded-r-lg rounded-l-none h-full py-[21px]"
+                className="btn btn-primary before:hidden rounded-e-lg rounded-s-none h-full py-[21px]"
                 type="submit"
+                aria-label="جست‌وجو"
               >
                 <FaSearch />
               </button>
@@ -97,15 +99,15 @@ const Search = ({ searchList }: Props) => {
               <img
                 className="mx-auto mb-6"
                 src="/images/no-search-found.png"
-                alt="no-search-found"
+                alt=""
               />
               <h1 className="h2 mb-4">
-                {inputVal.length < 1 ? "Search Post Here" : "No Search Found!"}
+                {inputVal.length < 1 ? "عبارت جست‌وجو را وارد کنید" : "نتیجه‌ای پیدا نشد"}
               </h1>
               <p>
                 {inputVal.length < 1
-                  ? "Search for posts by title, category, or tag."
-                  : "We couldn't find what you searched for. Try searching again."}
+                  ? "می‌توانید بر اساس عنوان، دسته‌بندی یا برچسب جست‌وجو کنید."
+                  : "عبارت دیگری را امتحان کنید."}
               </p>
             </div>
           ) : (
@@ -131,16 +133,16 @@ const Search = ({ searchList }: Props) => {
                         {item.data.title}
                       </a>
                     </h4>
-                    <ul className="mb-4">
-                      <li className="mr-4 inline-block">
-                        <FaRegFolder className={"-mt-1 mr-2 inline-block"} />
+                    <ul className="mb-4 flex flex-wrap gap-x-4 gap-y-1">
+                      <li className="inline-block">
+                        <FaRegFolder className={"-mt-1 me-2 inline-block"} />
                         {categories?.map((category: any, index: number) => (
                           <a
                             href={`/categories/${slugify(category)}`}
                             key={category}
                           >
-                            {humanize(category)}
-                            {index !== categories.length - 1 && ", "}
+                            {category}
+                            {index !== categories.length - 1 && "، "}
                           </a>
                         ))}
                       </li>
@@ -152,7 +154,7 @@ const Search = ({ searchList }: Props) => {
                       className="btn btn-outline-primary btn-sm"
                       href={`/${post_folder}/${item.slug}`}
                     >
-                      read more
+                      ادامه مطلب
                     </a>
                   </div>
                 </div>

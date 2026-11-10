@@ -32,7 +32,7 @@ const Tabs = ({
   ) => {
     if (event.key === "Enter" || event.key === " ") {
       setActive(index);
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "ArrowLeft") {
       setActive((active + 1) % tabLinks.length);
     } else if (event.key === "ArrowLeft") {
       setActive((active - 1 + tabLinks.length) % tabLinks.length);

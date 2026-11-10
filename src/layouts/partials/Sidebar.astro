@@ -7,6 +7,7 @@ import DynamicIcon from "@/helpers/DynamicIcon";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import dateFormat from "@/lib/utils/dateFormat";
 import { sortByDate } from "@/lib/utils/sortFunctions";
+import { fa } from "@/lib/utils/fa";
 import { markdownify, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -44,7 +45,8 @@ const categoriesWithPostsCount = catagories.map((category) => {
           style={{ objectFit: "contain" }}
           class="-z-[1] absolute inset-0"
           src="/images/map.png"
-          alt="bg-map"
+          alt=""
+          aria-hidden="true"
           format="webp"
           loading="eager"
         />
@@ -59,24 +61,23 @@ const categoriesWithPostsCount = catagories.map((category) => {
     )
   }
 
-  {/* categories widget */}
   {
     categories.enable && (
       <div class="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
         <h4
           class="section-title mb-12 text-center"
-          set:text={markdownify(featured_posts.title)}
+          set:text={markdownify(categories.title)}
         ></h4>
         <ul>
           {categoriesWithPostsCount.map((category, i) => (
             <li
-              class={`relative mb-2 flex items-center justify-between pl-6 text-[16px] font-bold capitalize text-text-dark dark:text-darkmode-text-light ${
+              class={`relative mb-2 flex items-center justify-between ps-6 text-[16px] font-bold text-text-dark dark:text-darkmode-text-light ${
                 i !== catagories.length - 1 &&
                 "border-b border-border  dark:border-darkmode-border"
               }`}
             >
               <svg
-                class="absolute left-0 top-2.5"
+                class="absolute start-0 top-2.5 -scale-x-100"
                 width="20px"
                 height="20px"
                 viewBox="0 0 20 20"
@@ -93,9 +94,9 @@ const categoriesWithPostsCount = catagories.map((category) => {
                 />
               </svg>
               <a class="py-2" href={`/categories/${slugify(category.name)}`}>
-                {slugify(category.name)}
-                <span class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500">
-                  {category.posts}
+                {category.name}
+                <span class="absolute end-0 top-1/2 -translate-y-1/2 text-gray-500">
+                  {fa(category.posts)}
                 </span>
               </a>
             </li>
@@ -105,29 +106,27 @@ const categoriesWithPostsCount = catagories.map((category) => {
     )
   }
 
-  {/* featured widget */}
   {
     featured_posts.enable && (
       <div class="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
-        <h4 class="section-title mb-12 text-center">Featured</h4>
-        <div class="mb-12 flex items-center justify-center">
+        <h4 class="section-title mb-12 text-center">نوشته‌ها</h4>
+        <div class="mb-12 flex items-center justify-center gap-3">
           <button
             tab-button
             tab-target="featured-tab"
             class={`btn px-5 py-2  btn-primary`}
           >
-            Featured
+            برگزیده
           </button>
           <button
             tab-button
             tab-target="recent-tab "
-            class={`btn ml-3  px-5 py-2 btn-outline-primary`}
+            class={`btn px-5 py-2 btn-outline-primary`}
           >
-            Recent
+            تازه‌ها
           </button>
         </div>
 
-        {/* Featured  */}
         <div class="featured-tab block">
           {featuredPosts
             .slice(0, featured_posts.showPost)
@@ -140,7 +139,7 @@ const categoriesWithPostsCount = catagories.map((category) => {
               >
                 {post.data.image && (
                   <Image
-                    class="mr-3 h-[85px] w-[85px] rounded-full object-cover"
+                    class="me-3 h-[85px] w-[85px] rounded-full object-cover"
                     src={post.data.image}
                     alt={post.data.title || ""}
                     width={105}
@@ -158,7 +157,7 @@ const categoriesWithPostsCount = catagories.map((category) => {
                     </a>
                   </h3>
                   <p class="inline-flex items-center font-secondary text-xs">
-                    <DynamicIcon className="mr-1.5" icon="FaRegCalendar" />
+                    <DynamicIcon className="me-1.5" icon="FaRegCalendar" />
                     {dateFormat(post.data.date!)}
                   </p>
                 </div>
@@ -169,7 +168,6 @@ const categoriesWithPostsCount = catagories.map((category) => {
     )
   }
 
-  {/* newsletter */}
   {
     newsletter.enable && (
       <div class="mt-6  rounded border border-border p-6 text-center dark:border-darkmode-border">
@@ -178,29 +176,33 @@ const categoriesWithPostsCount = catagories.map((category) => {
         <form action="#" class="py-6">
           <fieldset class="relative">
             <input
-              class="newsletter-input form-input h-12 w-full rounded-3xl border-none bg-light! px-5! py-3! pr-12! text-text-dark placeholder:text-xs dark:bg-darkmode-dark!"
-              type="text"
-              placeholder="Type And Hit Enter"
+              class="newsletter-input form-input h-12 w-full rounded-3xl border-none bg-light! px-5! py-3! pe-12! text-text-dark placeholder:text-xs dark:bg-darkmode-dark!"
+              type="email"
+              dir="ltr"
+              inputmode="email"
+              placeholder="ایمیل خود را وارد کنید"
+              aria-label="ایمیل"
               required
             />
             <DynamicIcon
               icon="FaEnvelope"
-              className="absolute top-1/2 right-5 -translate-y-1/2 text-xl transition duration-75"
+              className="absolute top-1/2 end-5 -translate-y-1/2 text-xl transition duration-75"
             />
           </fieldset>
           <button class="d-block  btn btn-primary mt-4 w-full" type="submit">
-            Sign In
+            عضویت
           </button>
         </form>
 
-        <p class="text-[13px] font-medium text-prirmary">
-          By Singing Up, You Agree To
+        <p class="text-[13px] font-medium text-primary">
+          با عضویت،
           <a
             href={newsletter.privacy_policy_page}
-            class="ml-1 underline decoration-wavy"
+            class="ms-1 underline decoration-wavy"
           >
-            Privacy Policy
+            سیاست حریم خصوصی
           </a>
+          را می‌پذیرید.
         </p>
       </div>
     )
@@ -208,7 +210,6 @@ const categoriesWithPostsCount = catagories.map((category) => {
 </aside>
 
 <script>
-  // astro:page-load event is fired when the page is loaded
   document.addEventListener("astro:page-load", () => {
     const tabButtons = document.querySelectorAll(
       "[tab-button]",

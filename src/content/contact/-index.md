@@ -1,21 +1,21 @@
 ---
-title: "Let’s, Talk </br> About You"
-description: "meta description"
+title: "با ما </br> در تماس باشید"
+description: "صفحه تماس"
 meta_title: ""
-phone: "+211234565523"
-mail: "info@email.com"
-location: "9567 Turner Trace Apt. BC C3G8A4"
+phone: "+982112345678"
+mail: "info@example.com"
+location: "تهران، خیابان نمونه"
 form_action: "#"
 social_links:
-  - icon: FaUser
-    content: "+211234565523"
-    link: tel:+211234565523
+  - icon: FaPhone
+    content: "+98 21 1234 5678"
+    link: tel:+982112345678
   - icon: FaEnvelope
-    content: info@email.com
-    link: mailto:info@gmail.com
+    content: info@example.com
+    link: mailto:info@example.com
   - icon: FaLocationDot
-    content: 9567 Turner Trace Apt. BC C3G8A4
-    link: https://maps.app.goo.gl/GUU64bJCQtiSRxGx9
+    content: تهران، خیابان نمونه
+    link: https://maps.google.com
 
 draft: false
 ---

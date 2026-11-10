@@ -37,12 +37,12 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 const totalPages = Math.ceil(sortedPosts.length / pagination);
 ---
 
-<Base>
+<Base title={postIndex.data.title}>
   <section class="section">
     <div class="container">
       <h1
         class="h2 mb-8 text-center"
-        set:html={markdownify(postIndex.data.title || "")}
+        set:html={markdownify(postIndex.data.title || "نوشته‌ها")}
       ></h1>
       <div class="row mb-16">
         {

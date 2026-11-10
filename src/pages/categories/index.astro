@@ -3,7 +3,8 @@ import config from "@/config/config.json";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import Base from "@/layouts/Base.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { humanize, markdownify } from "@/lib/utils/textConverter";
+import { markdownify } from "@/lib/utils/textConverter";
+import { fa } from "@/lib/utils/fa";
 import { getCollection } from "astro:content";
 
 const { post_folder } = config.settings;
@@ -23,11 +24,11 @@ const categoriesWithPostsCount = categories.map((category) => {
 });
 ---
 
-<Base title={"Categories"}>
+<Base title={"دسته‌بندی‌ها"}>
   <section class="section pt-0">
     <h1
       class="h2 bg-light dark:bg-darkmode-dark py-12 text-center lg:text-[55px]"
-      set:html={markdownify("Categories")}
+      set:html={markdownify("دسته‌بندی‌ها")}
     ></h1>
 
     <div class="container pt-12 text-center">
@@ -38,8 +39,8 @@ const categoriesWithPostsCount = categories.map((category) => {
               <a
                 href={`/categories/${category.name}`}
                 class="flex w-full items-center justify-center rounded-lg bg-light px-4 py-4 font-bold text-text-dark transition hover:bg-primary hover:text-white  dark:bg-darkmode-dark dark:text-darkmode-text-light dark:hover:bg-primary dark:hover:text-white">
-                <DynamicIcon icon="FaFolder" className="mr-1.5" />
-                {humanize(category.name)} ({category.posts})
+                <DynamicIcon icon="FaFolder" className="me-1.5" />
+                {category.name} ({fa(category.posts)})
               </a>
             </li>
           ))

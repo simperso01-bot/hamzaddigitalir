@@ -1,5 +1,6 @@
 ---
 import { getSinglePage } from "@/lib/contentParser.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
 
 const posts = await getSinglePage("posts");
 
@@ -14,24 +15,21 @@ const next =
   currentPostIndex == lastIndex ? undefined : posts[currentPostIndex + 1]?.id;
 ---
 
-<div class="row">
-  <span class="col">
-    {
-      prev && (
-        <a href={prev} class={"btn btn-primary"}>
-          Prev
-        </a>
-      )
-    }
-  </span>
-  <span class="col-8"></span>
-  <span class="col">
-    {
-      next && (
-        <a href={next} class={"btn btn-primary"}>
-          Next
-        </a>
-      )
-    }
-  </span>
+<div class="flex items-center justify-between gap-3">
+  {
+    prev ? (
+      <a href={prev} class="btn btn-outline-primary inline-flex items-center gap-2">
+        <DynamicIcon icon="FaArrowRight" />
+        قبلی
+      </a>
+    ) : <span></span>
+  }
+  {
+    next && (
+      <a href={next} class="btn btn-outline-primary inline-flex items-center gap-2">
+        بعدی
+        <DynamicIcon icon="FaArrowLeft" />
+      </a>
+    )
+  }
 </div>

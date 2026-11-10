@@ -1,13 +1,12 @@
 ---
-import { humanize } from "@/lib/utils/textConverter";
+import { fa } from "@/lib/utils/fa";
 
 const { tags, categories, allCategories } = Astro.props;
 ---
 
 <div class="lg:col-4">
-  <!-- categories -->
   <div class="mb-8">
-    <h5 class="mb-6">Categories</h5>
+    <h5 class="mb-6">دسته‌بندی‌ها</h5>
     <div class="rounded bg-light p-8 dark:bg-text-darkmode-light">
       <ul class="space-y-4">
         {
@@ -16,11 +15,11 @@ const { tags, categories, allCategories } = Astro.props;
               (c: any) => c === category
             ).length;
             return (
-              <li class="bg-red-500">
+              <li>
                 <a
                   class="flex justify-between hover:text-primary hover:dark:text-darkmode-primary"
                   href={`/categories/${category}`}>
-                  {humanize(category)} <span>({count})</span>
+                  {category} <span>({fa(count)})</span>
                 </a>
               </li>
             );
@@ -29,9 +28,8 @@ const { tags, categories, allCategories } = Astro.props;
       </ul>
     </div>
   </div>
-  <!-- tags -->
   <div class="mb-8">
-    <h5 class="mb-6">Tags</h5>
+    <h5 class="mb-6">برچسب‌ها</h5>
     <div class="rounded bg-light p-6 dark:bg-text-darkmode-light">
       <ul>
         {
@@ -41,7 +39,7 @@ const { tags, categories, allCategories } = Astro.props;
                 <a
                   class="m-1 block rounded bg-white px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-text-darkmode-primary dark:hover:text-text-dark"
                   href={`/tags/${tag}`}>
-                  {humanize(tag)}
+                  {tag}
                 </a>
               </li>
             );

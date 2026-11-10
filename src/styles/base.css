@@ -3,7 +3,9 @@ html {
 }
 
 body {
-  @apply bg-body font-primary font-normal leading-relaxed text-text dark:bg-darkmode-body dark:text-darkmode-text-light;
+  @apply bg-body font-primary font-normal text-text dark:bg-darkmode-body dark:text-darkmode-text-light;
+  line-height: 1.8;
+  letter-spacing: 0;
 }
 
 h1,
