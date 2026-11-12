@@ -7,47 +7,12 @@
     {
       "name": "نوشته‌ها",
       "url": "/posts"
-    },
-    {
-      "name": "درباره",
-      "url": "/about"
-    },
-    {
-      "name": "تماس",
-      "url": "/contact"
-    },
-    {
-      "name": "صفحه‌ها",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "المان‌ها",
-          "url": "/elements"
-        },
-        {
-          "name": "دسته‌بندی‌ها",
-          "url": "/categories"
-        }
-      ]
     }
   ],
   "footer": [
     {
       "name": "خانه",
       "url": "/"
-    },
-    {
-      "name": "درباره",
-      "url": "/about"
-    },
-    {
-      "name": "تماس",
-      "url": "/contact"
-    },
-    {
-      "name": "حریم خصوصی",
-      "url": "/privacy-policy"
     }
   ]
 }

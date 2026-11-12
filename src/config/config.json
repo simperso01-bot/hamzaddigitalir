@@ -1,15 +1,15 @@
 {
   "site": {
-    "title": "Geeky Astro",
-    "base_url": "https://example.com",
+    "title": "شبیه ساز همزاد دیجیتال",
+    "base_url": "https://hamzaddigital.ir",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo": "",
+    "logo_darkmode": "",
     "logo_width": "150",
     "logo_height": "39",
-    "logo_text": "Geeky"
+    "logo_text": "شبیه ساز همزاد دیجیتال"
   },
 
   "settings": {
@@ -28,14 +28,14 @@
 
   "params": {
     "contact_form_action": "#",
-    "footer_content": "وبلاگی برای نشر نوشته‌ها، یادداشت‌ها و تجربه‌های روزمره با طراحی ساده و خوانا.",
-    "copyright": "طراحی و توسعه توسط [Statichunt](https://statichunt.com/)"
+    "footer_content": "شبیه سازی کسب و کار با همزاد دیجیتال",
+    "copyright": "تمامی حقوق مادی و معنوی برای همزاد دیجیتال محفوظ است"
   },
 
   "widgets": {
     "about": {
       "enable": true,
-      "content": "اینجا درباره نویسنده، موضوع‌های مورد علاقه و مسیر فعالیت وبلاگ نوشته می‌شود."
+      "content": "شبکه های اجتماعی شبیه سازی همزاد دیجیتال"
     },
     "featured_posts": {
       "enable": true,
@@ -47,7 +47,7 @@
       "title": "دسته‌بندی‌ها"
     },
     "newsletter": {
-      "enable": true,
+      "enable": false,
       "title": "خبرنامه",
       "content": "برای دریافت تازه‌ترین نوشته‌ها، ایمیل خود را وارد کنید.",
       "privacy_policy_page": "/privacy-policy",

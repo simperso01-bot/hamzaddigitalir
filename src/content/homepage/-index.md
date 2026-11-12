@@ -1,13 +1,13 @@
 ---
 banner:
-  title: خوش آمدید **!**
-  title_small: "به وبلاگ فارسی"
-  content: اینجا می‌توانید نوشته‌ها، یادداشت‌ها و تجربه‌های تازه را بخوانید. محتوای نمونه را با متن خودتان جایگزین کنید.
+  title: شبیه ساز‌ همزاد **!**
+  title_small: "شبیه‌سازی کسب و کار"
+  content: اینجا می‌توانید مقالات ارزشمند راجب شبیه‌سازی کسب و کار و تاثیر آن در آینده مطالعه کنید. پس با شبیه سازی همزاد همراه باشید!
   image_enable: true
-  image: /images/banner-author.png
+  image: /images/hero.webp
   button:
     enable: true
-    label: درباره من
+    label: درباره شبیه ساز همزاد
     link: /about
     rel: ""
 
@@ -16,7 +16,7 @@ featured_posts:
   title: نوشته‌های برگزیده
 
 promotion:
-  enable: true
+  enable: false
   image: /images/promotion.png
   link: "/contact"
 
